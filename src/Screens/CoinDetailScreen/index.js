@@ -46,6 +46,7 @@ const CoinDetailScreen = () => {
     return <ActivityIndicator size={"large"} />;
   }
   const {
+    id,
     name,
     symbol,
     image: { small },
@@ -57,10 +58,10 @@ const CoinDetailScreen = () => {
   } = coinsData;
   const percentageColor = price_change_percentage_24h < 0 ? "red" : "green";
   const { prices } = marketData;
-  console.log(coinId);
   return (
     <View style={{ paddingHorizontal: 10 }}>
       <CoinDetailHeader
+        coinId={id}
         symbol={symbol}
         image={small}
         marketCapRank={market_cap_rank}
